@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<body>
+<style>
+
+path {
+  fill: none;
+  stroke: #000;
+  stroke-width: 3px;
+}
+
+circle {
+  fill: steelblue;
+  stroke: #fff;
+  stroke-width: 3px;
+}
+</style>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+
+var points = [
+  [480, 200],
+  [480, 400],
+  [680, 200],
+  [680, 400]
+];
+
+var line = d3.svg.line()
+    .tension(0) // Catmull–Rom
+    .interpolate("basis-closed");
+
+var svg = d3.select("body").append("svg")
+    .attr("width", 960)
+    .attr("height", 500);
+
+svg.append("path")
+    .datum(points)
+    .style("stroke", "#ddd")
+    .style("stroke-dasharray", "4,4")
+    .attr("d", line);
+
+var path = svg.append("path")
+    .datum(points)
+    .attr("d", line)
+    .call(transition2);
+
+
+var circle = svg.append("circle")
+    .attr("r", 7)
+    .attr("transform", "translate(" + points[0] + ")");
+
+transition();
+function transition() {
+      //.each("end", function() { d3.select(this).call(transition); });
+
+   circle.transition()
+      .duration(7500)
+      .attrTween("transform", translateAlong(path.node()))
+      //.each("end", transition);
+}
+
+function transition2(path) {
+  path.transition()
+      .duration(7500)
+      .attrTween("stroke-dasharray", tweenDash);
+}
+
+function tweenDash() {
+  var l = this.getTotalLength(),
+      i = d3.interpolateString(0 + "," + l, l + "," + l);
+      
+      console.log(l);
+  return function(t) { console.log(t); console.log(i(t)); return i(t); };
+}
+
+
+// Returns an attrTween for translating along the specified path element.
+function translateAlong(path) {
+  var l = path.getTotalLength();
+  return function(d, i, a) {
+    return function(t) {
+      var p = path.getPointAtLength(t * l);
+      return "translate(" + p.x + "," + p.y + ")";
+    };
+  };
+}
+
+</script>
