@@ -42,8 +42,8 @@ var path = d3.geo.path()
       height = 1160;
 
   // Create the Mercator Projection (Map)
-  var projection = d3.geo.mercator().center([-73.98,40.75])
-      .scale(500000),
+  var projection = d3.geo.mercator().center([-73.98,40.8])
+      .scale(200000),
   path = d3.geo.path().projection(projection);
 
 
@@ -63,15 +63,14 @@ function ready(error,json) {
       var circle = d3.select("#svg").append("circle")
     .attr("r", 7);
 
-      var path2 = section.append("g")
+    var path2 = section.append("g")
     .selectAll("path")
     .data(json.features)
     .enter()
       .append("path").attr("class","thepath")
-      .style("stroke", "#333")
-      .style("stroke-dasharray","2,2")
-      .style('stroke-width',".9px")
-      .style("opacity",".5")
+      .style("stroke", "black")
+      .style("stroke-dasharray","4,4")
+      .style('stroke-width',"1px")
       .attr("d", path)
       .attr("fill", "none")
 
@@ -80,7 +79,7 @@ function ready(error,json) {
     .data(json.features)
     .enter()
       .append("path").attr("class","thepath")
-      .style("stroke", "#999")
+      .style("stroke", "black")
       .style('stroke-width',"1.5px")
       .call(transition2)
 
@@ -92,7 +91,7 @@ function ready(error,json) {
 
     function transition2(paths) {
       paths.transition()
-          .duration(8500)
+          .duration(7500)
           .attrTween("stroke-dasharray", tweenDash);
   //.style("stroke-dasharray","652px,652px")
 
@@ -104,7 +103,7 @@ function ready(error,json) {
     function transition() {
     
      circle.transition()
-        .duration(8500)
+        .duration(7500)
         .attrTween("transform", translateAlong(pathz.node()));
       //.each("end", transition);
     }
