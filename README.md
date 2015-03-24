@@ -1,23 +1,35 @@
 # stroke-dash-interpolation-talk
-slides from d3.js talk
+Slides from March d3.js talk at Pivotal Labs
+
+Three key concepts:
+1. Stroke-dasharray
+2. getTotalLength()
+3. getPointAtLength()
+
+### Links from the talk
+
+[Example of an interpolation:] (http://jsfiddle.net/c5YVX/8/)
+
+[Explainer on stroke-dasharray] (https://source.opennews.org/en-US/articles/animating-maps-d3-and-topojson/)
 
 
+[Example of animating a circle along a path](index2.html)
 
-http://www.tnoda.com/blog/2014-04-02
+[We can put these together to tell stories in much better ways](http://www.nytimes.com/newsgraphics/2013/10/13/russia/)
 
-http://www.nytimes.com/interactive/2014/12/09/science/space/curiosity-rover-28-months-on-mars.html
 
-http://zevross.com/blog/2014/09/30/use-the-amazing-d3-library-to-animate-a-path-on-a-leaflet-map/
+[Airplanes example] (http://www.tnoda.com/blog/2014-04-02)
 
-http://bl.ocks.org/duopixel/3824661
 
-http://bl.ocks.org/mbostock/8027835
+[Projection of the line on a basemap](http://zevross.com/blog/2014/09/30/use-the-amazing-d3-library-to-animate-a-path-on-a-leaflet-map/)
 
-http://www.nytimes.com/newsgraphics/2013/10/13/russia/
+[Tween between paths] (http://bl.ocks.org/mbostock/3916621)
 
-http://zevross.com/blog/2014/09/30/use-the-amazing-d3-library-to-animate-a-path-on-a-leaflet-map/
+[Using to animate Citibike paths](citibike-explorer.herokuapp.com)
 
-http://zevross.com/blog/2014/09/23/convert-google-directions-to-geojson-points-or-polylines/
+[Example of getting the point on a line from any position] (http://bl.ocks.org/mbostock/8027835)
 
-http://www.tnoda.com/blog/2014-04-02
+[Convert Google Maps directions to a Linestring](http://zevross.com/blog/2014/09/23/convert-google-directions-to-geojson-points-or-polylines/)
+
+[Change the point on a path relative to another window event](http://www.nytimes.com/interactive/2014/12/09/science/space/curiosity-rover-28-months-on-mars.html)
 

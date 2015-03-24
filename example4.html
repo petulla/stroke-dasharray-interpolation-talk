@@ -111,8 +111,9 @@ function ready(error,json) {
 
     function translateAlong(paths) {
       var l = paths.getTotalLength();
-      return function(d, i, a) {
+      return function(d, i) {
         return function(t) {
+          
           var p = paths.getPointAtLength(t * l);
           return "translate(" + p.x + "," + p.y + ")";
         };
@@ -124,9 +125,10 @@ function ready(error,json) {
     function tweenDash() {
       var l = this.getTotalLength(),
       i = d3.interpolateString(0 + "," + l, l + "," + l);
+
+
           
-          console.log(l);
-      return function(t) { console.log(t); console.log(i(t)); return i(t); };
+      return function(t) { console.log(i(t)); return i(t); };
     }
 
 

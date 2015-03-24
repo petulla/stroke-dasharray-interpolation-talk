@@ -26,12 +26,13 @@ var points = [
 ];
 
 var line = d3.svg.line()
-    .tension(0) // Catmull–Rom
-    .interpolate("basis-closed");
+    .tension(0)
+    //.interpolate("linear-closed");
+    =.interpolate("basis-closed");
 
 var svg = d3.select("body").append("svg")
     .attr("width", 960)
-    .attr("height", 500);
+    .attr("height", 900);
 
 svg.append("path")
     .datum(points)

@@ -24,8 +24,8 @@ circle {
   <body>
     <script type="text/javascript">
 
-var w = 960,
-    h = 500;
+var w = 1260,
+    h = 800;
 
 var svg = d3.select("body").append("svg:svg")
     .attr("width", w)
@@ -48,7 +48,6 @@ function transition() {
   circle.transition()
       .duration(5000)
       .attrTween("transform", translateAlong(path.node()))
-      //.each("end", transition);
 }
 
 transition();
