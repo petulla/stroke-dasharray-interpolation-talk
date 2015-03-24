@@ -26,6 +26,8 @@ Three key concepts:
 
 [Tween between paths] (http://bl.ocks.org/mbostock/3916621)
 
+[getPointAtLength for mouse interactions](http://bl.ocks.org/duopixel/3824661)
+
 [Using to animate Citibike paths](https://citibike-explorer.herokuapp.com)
 
 [Example of getting the point on a line from any position] (http://bl.ocks.org/mbostock/8027835)
