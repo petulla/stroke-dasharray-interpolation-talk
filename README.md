@@ -15,7 +15,7 @@ Three key concepts:
 [Explainer on stroke-dasharray] (https://source.opennews.org/en-US/articles/animating-maps-d3-and-topojson/)
 
 
-[Example of animating a circle along a path](index2.html)
+[Example of animating a circle along a path](example1.html)
 
 [We can put these together to tell stories in much better ways](http://www.nytimes.com/newsgraphics/2013/10/13/russia/)
 
