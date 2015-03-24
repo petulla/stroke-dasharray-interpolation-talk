@@ -32,42 +32,43 @@ circle {
 function ready(error,json) {
 
      var section = d3.select("body")
-
-    .append("svg")
-    .attr("width", width)
-    .attr("height", height)
-    .attr("id","svg");
+      .append("svg")
+      .attr("width", width)
+      .attr("height", height)
+      .attr("id","svg");
 
     
-      var path2 = section.append("g")
-    .selectAll("path")
-    .data(json.features)
-    .enter()
-      .append("path").attr("class","thepath")
-      .style("stroke", "#333")
-      .style("stroke-dasharray","2,2")
-      .style('stroke-width',".9px")
-      .style("opacity",".5")
-      .attr("d", path)
-      .attr("fill", "none")
+
+    var path2 = section.append("g")
+      .selectAll("path")
+      .data(json.features)
+        .enter()
+          .append("path").attr("class","thepath")
+          .style("stroke", "#333")
+          .style("stroke-dasharray","2,2")
+          .style('stroke-width',".9px")
+          .style("opacity",".5")
+          .attr("d", path)
+          .attr("fill", "none");
+
+    
 
     var pathz = section.append("g")
-    .selectAll("path")
-    .data(json.features)
-    .enter()
-      .append("path").attr("class","thepath")
-      .style("stroke", "#999")
-      .style('stroke-width',"1.5px")
-      .call(transition2)
+      .selectAll("path")
+      .data(json.features)
+      .enter()
+        .append("path").attr("class","thepath")
+        .style("stroke", "#999")
+        .style('stroke-width',"1.5px")
+        .call(transition2)
 
-      pathz
-      .attr("d", path)
-      .attr("fill", "none")
-      .call(transition)
+    var circle = d3.select("#svg").append("circle")
+      .attr("r", 7);
 
-        var circle = d3.select("#svg").append("circle")
-          .attr("r", 7);
-
+    pathz
+    .attr("d", path)
+    .attr("fill", "none")
+    .call(transition)
 
 
     function transition2(paths) {
