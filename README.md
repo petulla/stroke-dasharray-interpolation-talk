@@ -1,6 +1,8 @@
 # stroke-dash-interpolation-talk
 Slides from March d3.js talk at Pivotal Labs are in the .key and .pdf files
 
+This talk teaches how to make [this type](http://www.nytimes.com/newsgraphics/2013/10/13/russia/) of long-form interactive created by the New York Times.
+
 Three key concepts:
 
 1. `getPointAtLength()` (example1.html / example2.html / example3.html)
@@ -16,9 +18,6 @@ Three key concepts:
 
 
 [Example of animating a circle along a path](example1.html)
-
-[We can put these together to tell stories in much better ways](http://www.nytimes.com/newsgraphics/2013/10/13/russia/)
-
 
 [Airplanes example] (http://www.tnoda.com/blog/2014-04-02)
 
