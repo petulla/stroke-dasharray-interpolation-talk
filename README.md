@@ -3,7 +3,7 @@ Slides from March d3.js talk at Pivotal Labs are in the .key and .pdf files
 
 Three key concepts:
 
-1. `getPointAtLength()` (example1.html)
+1. `getPointAtLength()` (example1.html / example2.html / example3.html)
 1. `Stroke-dasharray` (example2.html / example3.html)
 2. `getTotalLength()` (example1.html / example2.html / example3.html)
 
