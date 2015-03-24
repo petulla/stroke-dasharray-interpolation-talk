@@ -20,38 +20,16 @@ circle {
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script src="http://d3js.org/queue.v1.min.js"></script>
 <script>
-/*
-
-var w = 1000;
-var h = 600;
-
-var width = w;
-var height = h;
-
-var projection = d3.geo.mercator()
-      .center([40.40, -73.98])
-      .scale(100)
-      .translate([width,height]);
-
-var path = d3.geo.path()
-    .projection(projection);
-*/
-
 
   var width = 960,
       height = 1160;
 
-  // Create the Mercator Projection (Map)
   var projection = d3.geo.mercator().center([-73.98,40.75])
       .scale(500000),
   path = d3.geo.path().projection(projection);
 
 
-
 function ready(error,json) {
-
-  console.log(json);
-  
 
      var section = d3.select("body")
 
@@ -94,10 +72,6 @@ function ready(error,json) {
       paths.transition()
           .duration(8500)
           .attrTween("stroke-dasharray", tweenDash);
-  //.style("stroke-dasharray","652px,652px")
-
-
-        //
     }
 
 
@@ -106,7 +80,6 @@ function ready(error,json) {
      circle.transition()
         .duration(8500)
         .attrTween("transform", translateAlong(pathz.node()));
-      //.each("end", transition);
     }
 
     function translateAlong(paths) {
@@ -125,47 +98,12 @@ function ready(error,json) {
     function tweenDash() {
       var l = this.getTotalLength(),
       i = d3.interpolateString(0 + "," + l, l + "," + l);
-
-
-          
-      return function(t) { console.log(i(t)); return i(t); };
+      return function(t) { return i(t); };
     }
 
 
 
 }
-// Update the projection to use computed scale & translate.
-/*
-
-//transition();
-
-
-function transition2(path) {
-  path.transition()
-      .duration(7500)
-      .attrTween("stroke-dasharray", tweenDash);
-}
-
-function tweenDash() {
-  var l = this.getTotalLength(),
-      i = d3.interpolateString(0 + "," + l, l + "," + l);
-      
-      console.log(l);
-  return function(t) { console.log(t); console.log(i(t)); return i(t); };
-}
-
-
-// Returns an attrTween for translating along the specified path element.
-function translateAlong(path) {
-  var l = path.getTotalLength();
-  return function(d, i, a) {
-    return function(t) {
-      var p = path.getPointAtLength(t * l);
-      return "translate(" + p.x + "," + p.y + ")";
-    };
-  };
-}*/
-
 queue()
     .defer(d3.json,'./data/test10.geojson').await(
       ready
