@@ -38,9 +38,7 @@ function ready(error,json) {
     .attr("height", height)
     .attr("id","svg");
 
-      var circle = d3.select("#svg").append("circle")
-    .attr("r", 7);
-
+    
       var path2 = section.append("g")
     .selectAll("path")
     .data(json.features)
@@ -67,6 +65,10 @@ function ready(error,json) {
       .attr("fill", "none")
       .call(transition)
 
+        var circle = d3.select("#svg").append("circle")
+          .attr("r", 7);
+
+
 
     function transition2(paths) {
       paths.transition()
@@ -76,7 +78,6 @@ function ready(error,json) {
 
 
     function transition() {
-    
      circle.transition()
         .duration(8500)
         .attrTween("transform", translateAlong(pathz.node()));
@@ -84,9 +85,8 @@ function ready(error,json) {
 
     function translateAlong(paths) {
       var l = paths.getTotalLength();
-      return function(d, i) {
+      return function(d,i) {
         return function(t) {
-          
           var p = paths.getPointAtLength(t * l);
           return "translate(" + p.x + "," + p.y + ")";
         };

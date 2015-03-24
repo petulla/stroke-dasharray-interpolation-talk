@@ -52,12 +52,10 @@ var circle = svg.append("circle")
 
 transition();
 function transition() {
-      //.each("end", function() { d3.select(this).call(transition); });
 
    circle.transition()
       .duration(7500)
-      .attrTween("transform", translateAlong(path.node()))
-      //.each("end", transition);
+      .attrTween("transform", translateAlong(path.node()));
 }
 
 function transition2(path) {
@@ -73,11 +71,9 @@ function tweenDash() {
   return function(t) { return i(t); };
 }
 
-
-// Returns an attrTween for translating along the specified path element.
 function translateAlong(path) {
   var l = path.getTotalLength();
-  return function(d, i, a) {
+  return function(d, i) {
     return function(t) {
       var p = path.getPointAtLength(t * l);
       return "translate(" + p.x + "," + p.y + ")";
