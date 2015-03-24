@@ -1,5 +1,5 @@
 # stroke-dash-interpolation-talk
-Slides from March d3.js talk at Pivotal Labs
+Slides from March d3.js talk at Pivotal Labs are in the .key and .pdf files
 
 Three key concepts:
 
