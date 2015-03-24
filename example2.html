@@ -28,7 +28,7 @@ var points = [
 var line = d3.svg.line()
     .tension(0)
     //.interpolate("linear-closed");
-    =.interpolate("basis-closed");
+    .interpolate("basis-closed");
 
 var svg = d3.select("body").append("svg")
     .attr("width", 960)
@@ -70,8 +70,7 @@ function tweenDash() {
   var l = this.getTotalLength(),
       i = d3.interpolateString(0 + "," + l, l + "," + l);
       
-      console.log(l);
-  return function(t) { console.log(t); console.log(i(t)); return i(t); };
+  return function(t) { return i(t); };
 }
 
 
