@@ -2,6 +2,7 @@
 Slides from March d3.js talk at Pivotal Labs
 
 Three key concepts:
+
 1. Stroke-dasharray
 2. getTotalLength()
 3. getPointAtLength()
