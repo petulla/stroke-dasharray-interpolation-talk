@@ -20,8 +20,6 @@ circle {
 }
 
     </style>
-  </head>
-  <body>
     <script type="text/javascript">
 
 var w = 1260,
@@ -52,14 +50,11 @@ function transition() {
 
 transition();
 
-// Returns an attrTween for translating along the specified path element.
 function translateAlong(path) {
   var l = path.getTotalLength();
-  return function(d, i, a) {
+  return function(d, i) {
     return function(t) {
-      //console.log(t);
       var p = path.getPointAtLength(t * l);
-      console.log(p);
       return "translate(" + p.x + "," + p.y + ")";
     };
   };
