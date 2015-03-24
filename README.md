@@ -10,7 +10,7 @@ Three key concepts:
 
 ### Links from the talk
 
-[Example of an interpolation:] (http://jsfiddle.net/c5YVX/8/)
+[Example of an interpolation] (http://jsfiddle.net/c5YVX/8/)
 
 [Explainer on stroke-dasharray] (https://source.opennews.org/en-US/articles/animating-maps-d3-and-topojson/)
 
