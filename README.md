@@ -27,7 +27,7 @@ Three key concepts:
 
 [Tween between paths] (http://bl.ocks.org/mbostock/3916621)
 
-[Using to animate Citibike paths](citibike-explorer.herokuapp.com)
+[Using to animate Citibike paths](https://citibike-explorer.herokuapp.com)
 
 [Example of getting the point on a line from any position] (http://bl.ocks.org/mbostock/8027835)
 
