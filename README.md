@@ -9,6 +9,8 @@ Three key concepts:
 1. `Stroke-dasharray` (example2.html / example3.html)
 2. `getTotalLength()` (example1.html / example2.html / example3.html)
 
+An additional explainer [can be found in this repo](https://github.com/petulla/Templates-to-go).
+
 
 ### Links from the talk
 
